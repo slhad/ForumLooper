@@ -1,0 +1,26 @@
+<div class="container-fluid" style="margin:5px">
+    <div class="form-inline" id="info">
+        <div class="form-group">
+            <button type="button" id="status" class="btn btn-default">Status</button>
+            <label for="forumId">Forum</label>
+            <select class="form-control" id="forumId">
+                {{#each connectors}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+            <label for="user">User</label>
+            <input type="text" class="form-control" id="user" placeholder="Username">
+            <label for="pass">Password</label>
+            <input type="password" class="form-control" id="pass" placeholder="Password">
+            <label for="topicUrl">Topic</label>
+            <input type="text" class="form-control" id="topicUrl" placeholder="Topic URL">
+            <label for="topicPos">Position</label>
+            <input type="number" class="form-control" min="-1" value="-1" id="topicPos">
+            <label for="topicTime">Refresh (s)</label>
+            <input type="number" class="form-control" min="0" max="60" value="1" id="topicTime">
+            <button type="button" id="topicOk" class="btn btn-primary">Watch</button>
+        </div>
+    </div>
+    <div id="data"></div>
+</div>
+<script src="static/javascript.js"></script>
