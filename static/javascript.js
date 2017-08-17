@@ -140,6 +140,12 @@ function postAlive() {
 let evt = new EventSource("stream");
 
 evt.addEventListener("message", function (e) {
+    let dataEvent = JSON.parse(e.data);
+
+    if (dataEvent.topic !== topicId) {
+        return
+    }
+
     console.log("new message received");
 
     let table = $("#datatable");
@@ -155,7 +161,7 @@ evt.addEventListener("message", function (e) {
     }
 
     let newElement = document.createElement("tr");
-    newElement.innerHTML = JSON.parse(e.data)["tr"];
+    newElement.innerHTML = dataEvent["tr"];
     table.prepend(newElement);
 });
 
