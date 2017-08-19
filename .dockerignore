@@ -1,0 +1,7 @@
+node_modules
+ForumLooper.*
+ns.iml
+atlassian-ide-plugin.xml
+**/*.js
+!static
+buildAndPush.sh
